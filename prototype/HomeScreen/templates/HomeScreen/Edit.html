@@ -1,0 +1,155 @@
+{% extends 'HomeScreen/main.html'%}
+{% load static %}
+
+{% block content %}
+
+<body id="page-top">
+    <div id="wrapper">
+
+        
+{% include 'HomeScreen/navbar.html' %}
+{% include 'HomeScreen/searchbar.html' %}
+
+<body id="page-top">
+    <div id="wrapper">
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+			    <h2 class="text-dark mb-0"><strong>Edit {{ tos_name }}'s Terms of Service</strong></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1>Bot/Admin Rating:</h1><input class="form-control-plaintext" type="text" value= {{tos.weightRating}} readonly="">
+                        </div>
+                        <div class="col-md-6">
+                            <h1>Community Rating:</h1><input class="form-control-plaintext" type="text" value="{{commRank}}" readonly="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div></div>
+            </div>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <div class="container">
+    	<!-- Use this form if using formset
+	    <form method="POST">
+		    {% csrf_token %}
+		    {{ formest.management_form }}
+		    {{ formset.as_p }}
+		    <button>Submit Edit For Review</button>
+	    </form>
+	    -->
+	    <button hx-get="{% url 'Edit-Form' %}" hx-swap="beforeend" hx-target="#Editforms">
+		Add Annotation Edit
+	    </button>
+	    
+	    <div id="Editforms">
+
+	    </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+                <div>
+                    <form id="ranking" action="/Edit">
+                        <label for=rankingDropdown>
+				Submit a ranking for this TOS. This will contribute to the average community rating.
+			</label>
+                        <select class="form-select" id=rankingDropdown name=rankingDropdown style="width:170px">
+                             <option value="11" selected>Select Ranking</option>
+                            
+                        </select>
+                    </form>
+                    <script type='text/javascript'>
+                        
+                        var rankingElement = document.getElementById("rankingDropdown");
+                        
+                        var i;
+                        for (i = 1; i <= 101; ++i) {
+                            
+                            var newOption = new Option;
+                            newOption.text = i - 1;
+                            newOption.value = i - 1;
+                            rankingElement.options[i] = newOption;
+                        } 
+                    </script>
+                    <button class="btn btn-primary" type="button" form="ranking">Submit Ranking</button>
+                </div>
+		 <!-- Element Charts -->
+		    <div>
+				    <br>
+				    <br>
+				    <h1 class = "text-center text-dark">Elements in TOS</h1>
+				<table class = "table table-bordered table-sm" style = "border-color: black">
+				    <tr>
+					<th class = "bg-primary text-bold text-light">Category</th>
+					<th class = "bg-primary text-bold text-light">Element</th>
+					<th class = "bg-primary text-bold text-light">Text</th>
+				    </tr>
+					{% for a in allText %}
+					    {% if a.element.weight > 0 %}
+				    <tr>
+					    <td class = "text-black text-bold">{{a.element.category}}</td>
+					    <td class = "table-success">{{a.element.description}}</td>
+					    <td class = "text-black">{{a.associatedText}}</td>
+				    </tr>
+					    {% elif a.element.weight  < 0 %}
+				    <tr>
+					    <td class = "text-black text-bold">{{a.element.category}}</td>
+					    <td class = "table-danger">{{a.element.description}}</td>
+					    <td class = "text-black">{{a.associatedText}}</td>
+				    </tr>
+					    {% else %}
+				    <tr>
+					    <td class = "text-black text-bold">{{a.element.category}}</td>
+					    <td class = "table-warning">{{a.element.description}}</td>
+					    <td class = "text-black">{{a.associatedText}}</td>
+				    </tr>
+					    {% endif %}
+
+					{% endfor %}
+				</table>
+		    </div>
+		    <!-- User Submitted Edits -->
+		    <div class="container">
+			    <h1 class="text-center text-dark">User Submitted Annotations</h1>
+			    <table class="table table-bordered table-sm" style="border-color: black">
+				    <tr>
+					    <th class= "bg-primary text-bold text-light">Category</th>
+					    <th class= "bg-primary text-bold text-light">Element</th>
+					    <th class= "bg-primary text-bold text-light">Annotation</th>
+					    <th class= "bg-primary text-bold text-light">Status</th>
+				    </tr>
+				    {% for edit in edits %}
+				    <tr>
+					    <td class= "text-black text-bold">{{ edit.element.category }}</td>
+					    <td class= "text-black">{{ edit.element.description }}</td>
+					    <td class= "text-black">{{ edit.text }}</td>
+					    {% if edit.status == 'Pending' %}
+					    	<td class= "table-warning">{{ edit.status }}</td>
+					    {% elif edit.status == 'Rejected' %}
+					    	<td class= "table-danger">{{ edit.status }}</td>
+						{% else %}
+					    	<td class= "table-success">{{ edit.status }}</td>
+					    {% endif %}
+				    </tr>
+				    {% endfor %}
+			    </table>
+		    </div>
+		<div class="text-black">{{ tos_text|linebreaks }}</div>
+        </div>
+    </div>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/theme.js'%}"></script>
+</body>
+
+</html>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+id,description,explanation,weight,category
+1,"Your content can be used by the service for present and future services.","The service has a worlwide, transferable and sublicensable right to use content you provide without any further consent or compensation to you.",-50.0,Ownership
+2,"You maintain ownership of your content.","The user does not need to waive any moral rights when using the service and, therefore, reatins ownership of their own user-generated content.",50.0,Ownership
+3,"You do not maintain moral rights of your work.","The moral rights include the right of attribution, the right to have a work published anonymously or pseudonymously, and the right to the integrity of the work.",-70.0,Ownership
+4,"Suggestions and feeback (your ideas) may be used without your approval or compensation.","The service can claim ownership on feedback, proposals, ideas and suggestions submitted by users, who may waive their ""moral rights"" on feedback.",-25.0,Ownership
+5,"Your account can be deleted without notice and without reason.",N/A,-50.0,Ownership
+6,"Notice is given before your account is closed.","The service will notify users (usually at least 30 days) prior to closing their accounts. This gives users a comfortable period of time to save any information and prepare for any losses.",50.0,Ownership
+7,"Your content may be removed if it is flagged for copyright claim.","As infringing on copyright rules of the service goes against their terms, content that is found to do so may be removed without notice.	0.0	Ownership 8	Service is capable of editing your content without reason.",0.0,Ownership
+8,"Service is capable of editing your content without reason.","Usually just resulting in removal of content, the service still includes editing of content to be their right in the terms.",-75.0,Ownership
+9,"Your content may be deleted without reason and without prior notice.","Services' terms does not include that they will notify you of content being removed. The service may delete your content prior to notice and without explanation.",50.0,Ownership
+10,"Your content may be blocked or censored without notice and without reason.","This differs from deletion of content due to the user-generated content being rejected from the beginning.",-30.0,Ownership
+11,"Your account can be suspended or terminated for repeat violations of the terms of use.",N/A,0.0,Ownership
+12,"Service may discontinue operations without prior notice.","Service may stop providing service at any time, without prior notice, resulting in loss of information and content with no liability for the losses.",-20.0,Ownership
+13,"Users may not create a new account if they are permanently banned from the service.","Assuming that the service is acting in good faith, disallowing new accounts from banned users will help suppress consistent poor behavior from users.",0.0,Ownership
+14,"Instructions are provided on how to submit a copyright claim.","The service will aid you in completing a copyright claim if your content's intellectual property rights are infringed on.",15.0,Ownership
+15,"You will have to opportunity to defend yourself if you are target of a copyright claim.","If you believe that your content was blocked or removed due to an incorrect copyright claim, you have the opportunity to send a rebuttal which the service will take into account.",30.0,Ownership
+16,"Service may use your content even after account is closed.","Due to granting a perpetual, irrevocable license to your content, the service may use this even after an account is deleted.",-30.0,Ownership
+17,"You are allowed to make your content comercially available to the service and others.",N/A,10.0,Ownership
+18,"Your content can be distributed through any media or future media.","User-generated content can be used by the service or by any of their future services for a multitude of uses.",-20.0,Ownership
+19,"Your content can be licensed to third parties by the service.","The service has a transferable right to use your content and license it to third parties.",-50.0,Ownership
+20,"Your content is encrypted and cannot be accessed by anyone unauthorized, nor be decrypted by anyone including the service.",N/A,75.0,Privacy/Data
+21,"Your personal data cannot be sold.",N/A,75.0,Privacy/Data
+22,"Your data is used for statistics not directly linked to a unique identity.","Your personal data will be aggregated into statistics to be used for analyitics or research. No data collected can be traced back to your personal identity.",0.0,Privacy/Data
+23,"The service collects a variety of personal data from the user.","Information collected by service may include contact information, biometric data, call logs, etc.",-50.0,Privacy/Data
+24,"The service can collect data from you even if you did not provide the data or interact with the service.",N/A,-50.0,Privacy/Data
+25,"Contact information is provided to make a complaint with regards to handling of your personal data.",N/A,25.0,Privacy/Data
+26,"No location information is tracked by the service.","The service explicitly states that they have no intention to gather location data from the user.",50.0,Privacy/Data
+27,"Location Information is collected and may be shared with third parties.","Location-based information may be shared with third parties. This is assumed as negative unless the service requires location information such as a GPS service.",-50.0,Privacy/Data
+28,"Your personal data is used for a variety of purposes including reasons not essnetial for the use of the service.","Your personal data can be used for nonessential services such as personal adverstising and general analytic purposes.",-50.0,Privacy/Data
+29,"The service is able to access private communications.","The service may scan, review, and read all private messages.",-50.0,Privacy/Data
+30,"This service may track your online activity using third-party websites.","Even if you aren't using the service directly, the service has access to your online activity via thire-party sites.",-50.0,Privacy/Data
+31,"Cookies used by this service only collect anonymized data.","Data collected from cookies is collected in an aggregated form so that it cannot be link to your unique identity.",50.0,Privacy/Data
+32,"Third-party cookies are used for a variety of reasons such as advertising or statistics.","Third-party services may use their cookies on the service's domain for their own advertising purposes.",-50.0,Privacy/Data
+33,"The service tracks which URL referred you to the service.","The service gathers which page brought you to its own service to use for a variety of reasons.",-20.0,Privacy/Data
+34,"The service does not use tracking technology.","The service explicitly states that you are not being tracked.",50.0,Privacy/Data
+35,"The service may track you via connected social media accounts.",N/A,-30.0,Privacy/Data
+36,"Service features may be impacted if the user blocks first-party cookies.","You are allowed to block cookies but the service does not guarantee that your experience will not be impacted by some cookies being blocked.",0.0,Privacy/Data
+37,"Temporary cookies are used.","Temporary (session) cookies do not need to be manually deleted. Once the browser is closed, cookies are automatically deleted.",30.0,Privacy/Data
+38,"Tracking pixels, web beacons, browser fingerprinting, and/or device printing may be used for tracking user behavior.",N/A,-50.0,Privacy/Data
+39,"Users cannot fully opt out of tracking technologies.",N/A,-50.0,Privacy/Data
+40,"Do Not Track headers are ignored.",N/A,-15.0,Privacy/Data
+41,"Do Not Track headers are granted.",N/A,30.0,Privacy/Data
+42,"Users will be notified of a data breach that results in comprimised personal information.",N/A,30.0,Privacy/Data
+43,"Personal data is kept for an undisclosed amount of time.",N/A,-30.0,Privacy/Data
+44,"The service does not track user IP addresses.",N/A,50.0,Privacy/Data
+45,"The service does collect user IP addresses.","Collecting IP address may give away general location but does not specify exact location.",0.0,Privacy/Data
+46,"The service may inquire a precise user location.","Precise user location include coordinates via GPS or location information when sharing content .",-50.0,Privacy/Data
+47,"The service may collect biometric data.",N/A,-50.0,Privacy/Data
+48,"The service can access your browsing history.",N/A,-50.0,Privacy/Data
+49,"You can request access or deletion of your data.",N/A,30.0,Privacy/Data
+50,"Users can limit how personal data is used by service.",N/A,30.0,Privacy/Data

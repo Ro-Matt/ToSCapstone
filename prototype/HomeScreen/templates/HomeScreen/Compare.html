@@ -1,0 +1,109 @@
+{% extends 'HomeScreen/main.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<body id="page-top">
+    <div id="wrapper">
+
+        
+{% include 'HomeScreen/navbar.html' %}
+{% include 'HomeScreen/searchbar.html' %}
+
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="text-dark mb-0"></h3>
+                    </div>
+                </div>
+                <h1 class="text-center" style="font-weight: bold;color: rgb(0,0,0);">Compare ToS</h1>
+                {% if c_form %}
+                <div class="container">
+                    <form action = " " method="POST">
+                    {% csrf_token %}
+                    <table>
+                    {{ c_form|crispy}}
+                    </table>
+                    <div class="col-md-6"><button class="btn btn-primary" type="submit">Compare</button></div>
+                </form>
+                </div>
+                {% endif %}
+            </div>
+            {% if tosObjects %}
+                <div class = "container">
+                  <table class = "table table-bordered table-sm" style = "border-color: black">
+                    <!-- <tr>
+                {% for t in tosObjects %}
+                        
+                            <th class = "bg-primary text-bold text-light">{{ t.name}}</th>
+                {% endfor %}
+                    </tr> -->
+                    <tr>
+                        <th class = "bg-primary text-bold text-light"></th>
+                        <th class = "bg-primary text-bold text-light">Legal Lite Ranking</td>
+                        <th class = "bg-primary text-bold text-light">Community Ranking</td>
+                    </tr>
+                    {% for t in tosObjects %}
+                        <tr>
+                        <td class = "bg-primary text-bold text-light"> {{ t.name }}</td>
+                        <td class = "bg-light text-bold text-black">{{ t.weightRating }}</th>
+                        <td class = "bg-light text-bold text-black">{% widthratio t.communityRating t.communityCount 1 %}</th>
+                        </tr>
+
+                    {% endfor %}
+                </table> 
+                </div>
+
+                <div class="container">
+                    <br>
+                    <br>
+                    <h1 class = "text-center text-dark">Elements</h1>
+                <table class = "table table-bordered table-sm" style = "border-color: black">
+                    <tr>
+                        <th class = "bg-primary text-bold text-light">Category</th>
+                        <th class = "bg-primary text-bold text-light">Element</th>
+                         {% for t in tosObjects %}
+                         <th class = "bg-primary text-bold text-light">{{ t.name }} </th>
+                         {% endfor %}
+
+                    </tr>
+                        {% for a in elements %}
+                            {% if a.weight > 0 %}
+                    <tr>
+                            <td class = "text-black text-bold">{{a.category}}</td>
+                            <td class = "table-success">{{a.description}}</td>
+
+                            {% elif a.weight  < 0 %}
+                            <td class = "text-black text-bold">{{a.category}}</td>
+                            <td class = "table-danger">{{a.description}}</td>
+                            {% else %}
+                            <td class = "text-black text-bold">{{a.category}}</td>
+                            <td class = "table-warning">{{a.description}}</td>
+                            {% endif %}
+                            {% for b in allText %}
+                                {% if a.id in b %}
+
+                                <td class = "text-bold text-primary text-center bg-light ">&#x2713;</td>
+                                {% else %}
+                                <td class = "text-bold text-dark text-center" style = "background-color: #CDCDCD" >&#x2717;</td>
+                                {% endif %}
+                            {% endfor %}
+                    </tr> 
+                        {% endfor %}
+                    </ul>
+                </table> 
+    </div>
+        {% endif %}
+        <footer class="bg-white sticky-footer">
+            <div class="container my-auto">
+                <div class="text-center my-auto copyright"><span>Copyright © Legal Lite | Team Crystal - Old Dominion University - 2022</span></div>
+            </div>
+        </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/theme.js'%}"></script>
+</body>
+
+</html>
+
+{% endblock %} -->

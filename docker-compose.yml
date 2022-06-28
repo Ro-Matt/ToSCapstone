@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  legalapp:
+    build: .
+    container_name: legalapp
+    command: python manage.py runserver 0.0.0.0:8080
+    ports:
+      - 8080:8080

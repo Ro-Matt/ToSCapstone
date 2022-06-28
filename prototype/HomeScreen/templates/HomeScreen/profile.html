@@ -1,0 +1,89 @@
+{% extends 'HomeScreen/main.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_field %}
+{% block content %}
+
+<body id="page-top">
+    <div id="wrapper">
+        
+{% include 'HomeScreen/navbar.html' %}
+{% include 'HomeScreen/searchbar.html' %}
+
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4">Profile</h3>
+                    <div class="row mb-3">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 fw-bold">User Settings</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <form action = "/profile" method = "POST">                                                <div class="row">
+                                                {%csrf_token %}
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label" for="username"><strong>Username: {{user.username}}</strong></label>{{u_form.username|as_crispy_field}}</div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label" for="email"><strong>Email: {{user.email}}</strong></label>{{u_form.email|as_crispy_field}}</div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label" for="first_name"><strong>First Name: {{user.first_name}}</strong></label>{{u_form.first_name|as_crispy_field}}</div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label" for="last_name"><strong>Last Name: {{user.last_name}}</strong></label>{{u_form.last_name|as_crispy_field}}</div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3"><button class="btn btn-primary btn-sm" type="submit">Save Settings</button></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="card shadow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow mb-5">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 fw-bold"># Of Contributions: {{user.profile.contributions}}</p>                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="mb-3"><label class="form-label" for="Additions"><strong>Additions</strong><br></label>
+                                        <div class="row">
+                                            <textarea id="signature-2" rows="5" name="Additions-List" placeholder="Once you start making contributions your stats will be listed here!!!" readonly=""></textarea>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col"><label class="form-label" for="Edits"><strong>Edits</strong><br></label>
+                                                <div class="row">
+                                                   <textarea id="signature-3" rows="5" name="Additions-List" placeholder="Once you start making contributions your stats will be listed here!!!" readonly=""></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow mb-5">
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © Legal Lite | Team Crystal - Old Dominion University - 2022</span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{% static '/js/theme.js'%}"></script>
+</body>
+
+</html>
+
+{% endblock %}

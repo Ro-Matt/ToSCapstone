@@ -1,0 +1,87 @@
+{% extends 'HomeScreen/main.html'%}
+{% load static %}
+
+{% block content %}
+
+<body id="page-top">
+    <div id="wrapper">
+
+        
+{% include 'HomeScreen/navbar.html' %}
+{% include 'HomeScreen/searchbar.html' %}
+        
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="text-dark mb-0"></h3>
+                    </div>
+                </div>
+                <h1 class="text-center" style="font-weight: bold;color: rgb(0,0,0);">Top Sites</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 offset-xl-0"><img src="{% static 'img/googleicon.png'%}">
+                            <p style="font-weight: bold;font-size: 26px;">Legal Lite Ranking:<br>Community Ranking:</p>
+                        </div>
+                        <div class="col-md-6"><img src="{% static 'img/youtube.png'%}">
+                            <p style="font-size: 26px;font-weight: bold;">Legal Lite Ranking:<br>Community Ranking:</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-6 offset-xl-0"><img src="{% static 'img/facebook.png'%}">
+                            <p style="font-size: 26px;font-weight: bold;">Legal Lite Ranking:<br>Community Ranking:</p>
+                        </div>
+                        
+                        <div class="col-md-6 offset-xl-0"><img src="{% static 'img/twitter.png'%}" style="width: 360px;">
+                            <a href="ViewTOS/Twitter">
+                            <p style="font-size: 26px;font-weight: bold;">Legal Lite Ranking:<br>Community Ranking:</p>
+                        </div>
+
+                    </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-6"><img src="{% static 'img/amazon.png'%}">
+                            <p style="font-size: 26px;font-weight: bold;">Legal Lite Ranking:<br>Community Ranking:</p>
+                        </div>
+                        <div class="col-md-6"><img src="{% static 'img/yahoo.png'%}">
+                            <p style="font-size: 26px;font-weight: bold;">Legal Lite Ranking:<br>Community Ranking:</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 offset-xl-0"><img src="{% static 'img/reddot.png'%}" style="width: 360px;">
+                            <p style="font-size: 26px;font-weight: bold;">Legal Lite Ranking:<br>Community Ranking:</p>
+                        </div>
+                        <div class="col-md-6"><img src="{% static 'img/bing.png'%}">
+                            <p style="font-size: 26px;font-weight: bold;">Legal Lite Ranking:<br>Community Ranking:</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 offset-xl-0"><img src="{% static 'img/ebay.png'%}" style="width: 166px;">
+                            <p style="font-size: 26px;font-weight: bold;">Legal Lite Ranking:<br>Community Ranking:</p>
+                        </div>
+                        <div class="col-md-6 offset-xl-0"><img src="{% static 'img/wikipedia.jpg'%}" style="width: 360px;">
+                            <p style="font-size: 26px;font-weight: bold;">Legal Lite Ranking:<br>Community Ranking:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © Legal Lite | Team Crystal - Old Dominion University - 2022</span></div>
+                </div>
+            </footer> 
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/theme.js'%}"></script>
+
+    {% endblock %}

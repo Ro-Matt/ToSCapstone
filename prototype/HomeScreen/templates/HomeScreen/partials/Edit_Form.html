@@ -1,0 +1,7 @@
+<div hx-target="this" hx-swap="outerHTML">
+	<form method="POST">
+		{% csrf_token %}
+		{{ form }}
+		<button hx-post="./Edit">Submit Edit</button>
+	</form>
+</div>

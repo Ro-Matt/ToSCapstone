@@ -1,0 +1,23 @@
+{% extends 'HomeScreen/main.html'%}
+{% load static %}
+{% block content %}
+
+<body id="page-top">
+    <div id="wrapper">
+
+        
+{% include 'HomeScreen/navbar.html' %}
+{% include 'HomeScreen/searchbar.html' %}
+
+<body class="bg-gradient-primary">
+    <div class="container">
+    <h2>You have been logged out!</h2>              
+                            <div class="text-center"><a class="small" href="login">Log back in?</a></div>
+    </div>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/theme.js'%}"></script>
+</body>
+
+</html>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'HomeScreen/main.html'%}
+{% load static %}
+
+{% block content %}
+
+<body id="page-top">
+    <div id="wrapper">
+
+        
+{% include 'HomeScreen/navbar.html' %}
+{% include 'HomeScreen/searchbar.html' %}
+
+        <div class="container-fluid">
+            <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                <h3 class="text-dark mb-0"></h3>
+            </div>
+        </div>
+        <h1 class="text-center" style="font-weight: bold;color: rgb(0,0,0);">ToS Search</h1>
+        <!-- Create Search Form -->
+        <div class="container">
+            <div class="row">
+                <form action="/search_for_tos" method="GET">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input name="Search-ToS-Name" type="search" class="form-control rounded" placeholder="ToS Name" aria-label="ToS Name" aria-describedby="search-addon" />
+                        <button type="submit" class="btn btn-outline-primary">search</button>
+                      </div>
+                </form>
+            </div>
+        
+            <div>
+                <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+            </div>
+            <!-- Render Search Results-->
+            {%if search_results %}
+                {% for result in search_results %}
+                    <li> <a href="ViewTOS/{{ result }}/"> {{ result }} </a> </li>
+                {% endfor %}
+            {% else %}
+              {% for c in categories %}
+              <div>
+              <li style = "font-weight:bold"> {{c}} </li>
+              </div>
+                {% for t in TOSs %}
+                    {% if t.category == c %}
+                       <li style = "text-indent: 25px"> <a href = "ViewTOS/{{ t }}/">{{t}} </a></li>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+            {%endif%}
+        </div>
+    </div>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/theme.js'%}"></script>
+</body>
+
+{% endblock %}

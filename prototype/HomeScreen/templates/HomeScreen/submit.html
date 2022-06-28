@@ -1,0 +1,34 @@
+{% extends 'HomeScreen/main.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<body id="page-top">
+    <div id="wrapper">
+        
+{% include 'HomeScreen/navbar.html' %}
+{% include 'HomeScreen/searchbar.html' %}
+
+        <div class="container-fluid">
+            <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                <h3 class="text-dark mb-0"></h3>
+            </div>
+        </div>
+        <h1 class="text-center" style="font-weight: bold;color: rgb(0,0,0);">ToS Submissions</h1>
+        <div class="container">
+            <div class="row">
+                <!--- ToS Data Form -->
+                <form action="/submit" method="POST">
+                    {% csrf_token %}              
+                    {{form|crispy}}
+                    <div class="col-md-6"><button class="btn btn-primary" type="submit">Submit</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/theme.js'%}"></script>
+</body>
+
+{% endblock %}
