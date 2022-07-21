@@ -1,2 +1,2 @@
 # ToSCapstone
-ToS Capstone ODU 2022
+Terms of Service translator
