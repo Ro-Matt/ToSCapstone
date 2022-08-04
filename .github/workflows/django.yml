@@ -25,3 +25,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        
+    - name: Deploy
+      uses: Ro-Matt/github-pages-deploy-action@v4
+      with:
+          folder: build
+          branch: main
