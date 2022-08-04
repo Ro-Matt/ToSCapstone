@@ -27,7 +27,7 @@ jobs:
         pip install -r requirements.txt
         
     - name: Deploy
-      uses: Ro-Matt/github-pages-deploy-action@v4
+      uses: Ro-Matt/TosCapstone@v4
       with:
           folder: build
           branch: main
