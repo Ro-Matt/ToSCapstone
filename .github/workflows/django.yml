@@ -27,7 +27,7 @@ jobs:
         pip install -r requirements.txt
         
     - name: Deploy
-      uses: Ro-Matt/TosCapstone@v1
+      uses: Ro-Matt/TosCapstone@main
       with:
           folder: build
           branch: main
